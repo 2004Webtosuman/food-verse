@@ -1,0 +1,90 @@
+=========================================================
+FOOD-VERSE - COMPREHENSIVE SYSTEM & PROJECT DOCUMENTATION
+=========================================================
+
+1. PROJECT OVERVIEW & GOAL
+---------------------------------------------------------
+Project Name: FoodVerse (Formerly known as FoodExpress)
+Environment: Local / XAMPP Environment (c:\xampp\htdocs\food-verse)
+
+Primary Goal: 
+To develop a robust, modern, and highly aesthetically pleasing web-based food ordering platform. The system facilitates end-to-end management for restaurant operations: from product browsing and ordering by customers, tracking delivery processes, to providing comprehensive administrative control. The system is heavily focused on delivering a "premium, dynamic, warm-toned, and minimalist" User Interface that is fully mobile-responsive across all interfaces, abandoning legacy components (like GridViews) in favor of responsive, card-based layouts. 
+
+2. TECHNOLOGY STACK USED
+---------------------------------------------------------
+- Frontend (UI/UX):
+  * HTML5 for semantic structure.
+  * Custom Vanilla CSS3 (Strictly custom styling, bypassing reliance on external frameworks like Tailwind unless specifically injected for certain modules).
+  * JavaScript (Vanilla JS/ES6) for DOM manipulation, micro-animations, frontend validations, client-side interactions, map functionalities, and dynamic components.
+
+- Backend Logic:
+  * PHP (Procedural and Object-Oriented implementations) handling API routing, form submissions, and template rendering.
+
+- Relational Database Management System (RDBMS):
+  * Microsoft SQL Server (T-SQL syntax utilizing IDENTITY tracking and GETDATE() timestamping). 
+  * Connected via PHP's SQLSRV extensions.
+
+- Third-Party Packages & Integrations:
+  * Composer (Dependency Management).
+  * PHPMailer (^7.0) used for advanced email distribution, ensuring reliable mailing protocols including support for large media/video attachments.
+
+3. CORE SYSTEM ARCHITECTURE
+---------------------------------------------------------
+The application is structured into clearly separated domains to enforce security and logical grouping:
+
+/admin/ 
+  - Represents the Control Dashboard for administrative personnel. 
+  - Key Modules: 
+    * orders.php / view_order.php: Monitoring incoming orders, updating statuses.
+    * products.php / edit_product.php / categories.php: Managing the food catalog.
+    * users.php / view_user.php: Customer base administration. Includes an advanced communication feature to directly dispatch emails with multi-media attachments to users.
+    * reports.php: Business statistics and insights.
+    * rider_simulator.php: A specialized mock system testing the order delivery tracking algorithms.
+
+/customer/
+  - Represents the private portal for authenticated end-users.
+  - Key Modules:
+    * profile.php / edit_profile.php: User demographics and account management.
+    * cart.php / checkout.php: Standard shopping flows.
+    * orders.php / track_order.php: Order history and real-time transit status monitoring.
+    * wishlist.php: Product saving functionality.
+    * rider_profile.php: Public interface showing assigned delivery personnel's metrics.
+
+/includes/ & /config/
+  - Represents the core business logic, helpers, and configurations.
+  - Core files include db.php for database interconnectivity, auth.php for session/access control, mail_helper.php wrapping PHPMailer instances, and database.sql mapping the baseline schema.
+
+/public/ (Root application files)
+  - index.php: The main landing page.
+  - login.php, signup.php, forgot_password.php, verify_otp.php, reset_password.php: A highly secure, complete authentication loop verifying users and offering recovery workflows.
+  - product.php: Dedicated product showcasing pages.
+  - feedback.php: Specialized product and system feedback capturing processes to enhance user engagement.
+
+4. DATABASE STRUCTURE & KEY ENTITIES
+---------------------------------------------------------
+The data layer resides within the `food_verse` SQL Server Database. Core tables include:
+
+1. users: Stores demographic details, secure password hashes, latitude/longitude mapping properties, and roles ('admin', 'user').
+2. categories: Contains logical groupings for products (e.g., Burgers, Pizza, Sweets) with associated iconography.
+3. products: Contains menu items detailing pricing, descriptions, exact stock quantities, and promotional states (is_deal).
+4. orders & order_items: Contains precise transactional logic tying a user, multiple products, and tracking coordinates (restaurant vs delivery addresses) over a lifecycle (Pending -> Confirmed -> Preparing -> Out for Delivery -> Delivered).
+5. cart_items & wishlist: Ephemeral selection storage allowing users to retain states across sessions.
+6. audit_logs: System-side logging for security, debugging, and historical tracking of significant system events.
+
+5. KEY ACHIEVEMENTS & IMPLEMENTED FEATURES
+---------------------------------------------------------
+Based on the project's evolution, several advanced features have been carefully integrated:
+- Advanced Admin Email Automation: Administrators can dynamically communicate with users directly from the `view_user.php` profile interface. The application processes and supports heavy multimedia files seamlessly.
+- Responsive Card-Based Overhaul: Admin interfaces were refactored from rigid tables to a fluid, fully mobile-responsive card layout scheme, significantly boosting mobile management efficiency.
+- Dynamic Feedback Ecosystem: Admin panels boast constrained-scrolling interactive feedback sections, capturing both system-wide UI/UX feedback and specific product reviews seamlessly.
+- Secure OTP Authentication: The system utilizes secure email OTPs verifying user identity during signup, purchasing, or password recovery endpoints.
+- Geographic Readiness: Migrations and file allocations explicitly layout spatial handling (e.g., nepal_locations.json, track_order.php) anticipating geolocation tracking overlays.
+
+6. DESIGN & UX PHILOSOPHY (Adhered strictly in the lifecycle)
+---------------------------------------------------------
+Visual excellence is a cornerstone of this application.
+* "Wow-Factor" Interface: Avoiding simple, generic HTML/CSS patterns in favor of modern properties (Glassmorphism, sophisticated dark modes, fluid gradients).
+* Professional Typography: Consistent integration of high-quality fonts.
+* Engagement through Micro-Animations: Deliberate utilization of hover effects, smooth transitions, and visual feedback upon user interactivity creating a system that "breathes" and responds organically to the user.
+
+*** END OF DOCUMENTATION ***

@@ -1,0 +1,258 @@
+/* assets/css/modern_menu.css */
+
+/* ─── Category Bar (Horizontal Scroll) ────────────────────────── */
+.category-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.category-bar {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.5rem 0.25rem 1.5rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scroll-behavior: smooth;
+}
+
+.category-bar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.category-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.category-item:hover .category-icon-wrapper {
+    transform: translateY(-4px) scale(1.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.2);
+}
+
+.category-item.active .category-icon-wrapper {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+}
+
+.category-name {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.category-item.active .category-name {
+    color: var(--primary-color);
+}
+
+/* ─── Tag Filter Pills ───────────────────────────────────────── */
+.tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.tag-pill {
+    display: flex;
+    items-center: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 100px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tag-pill:hover {
+    border-color: var(--primary-color);
+    color: var(--text-color);
+    background: var(--section-bg);
+}
+
+.tag-pill.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+}
+
+/* ─── Product Card Premium Styling ───────────────────────────── */
+.product-card-v2 {
+    background: var(--card-bg);
+    border-radius: 28px;
+    padding: 1rem;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card-v2:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+.product-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    aspect-ratio: 1;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card-v2:hover .product-img {
+    transform: scale(1.08);
+}
+
+/* ─── Tag Badges ────────────────────────────────────────────── */
+.badge-container {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    z-index: 5;
+}
+
+.tag-badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.tag-badge.spicy { background: rgba(239, 68, 68, 0.85); color: #fff; }
+.tag-badge.premium { background: rgba(245, 158, 11, 0.85); color: #fff; }
+.tag-badge.healthy { background: rgba(34, 197, 94, 0.85); color: #fff; }
+.tag-badge.combo { background: rgba(6, 182, 212, 0.85); color: #fff; }
+
+.wishlist-btn-modern {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    color: #9CA3AF;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+[data-theme="dark"] .wishlist-btn-modern {
+    background: rgba(26, 31, 46, 0.8);
+}
+
+.wishlist-btn-modern:hover {
+    color: #EF4444;
+    transform: scale(1.1);
+}
+
+.wishlist-btn-modern.active {
+    color: #EF4444;
+}
+
+.product-info {
+    padding: 0 0.5rem;
+}
+
+.product-name-modern {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+    display: block;
+    text-decoration: none;
+}
+
+.product-price-modern {
+    font-size: 1.25rem;
+    font-weight: 950;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.add-btn-modern {
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: 16px;
+    background: var(--section-bg);
+    border: 1px solid var(--card-border);
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn-modern:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.product-card-v2 {
+    animation: fadeInScale 0.4s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}

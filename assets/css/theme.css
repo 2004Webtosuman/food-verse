@@ -1,0 +1,205 @@
+/* assets/css/theme.css */
+:root {
+  --bg-color:       #FFF8F2;
+  --text-color:     #1A1A1A;
+  --text-muted:     #9CA3AF;
+  --card-bg:        #FFFFFF;
+  --card-border:    #F1EAE4;
+  --section-bg:     #FDF2EC;
+  --input-bg:       #FFFFFF;
+  --search-bg:      #F0EDE8;
+  --primary-color:  #FF6B35;
+  --primary-hover:  #E85A2A;
+  --shadow-color:   rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] {
+  --bg-color:       #0F1117;
+  --text-color:     #F3F4F6;
+  --text-muted:     #9CA3AF;
+  --card-bg:        #1A1F2E;
+  --card-border:    #2D3748;
+  --section-bg:     #151B27;
+  --input-bg:       #1E2533;
+  --search-bg:      #1E2533;
+  --shadow-color:   rgba(0,0,0,0.6);
+}
+
+/* ─── Smooth transitions ─────────────────────────────────────── */
+*, *::before, *::after {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Remove transition on images / icons to avoid flicker */
+img, svg, i { transition: none !important; }
+
+/* ─── Body ───────────────────────────────────────────────────── */
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* ─── Background utilities ───────────────────────────────────── */
+.bg-white, .bg-card-bg {
+  background-color: var(--card-bg) !important;
+}
+
+.bg-app-bg {
+  background-color: var(--bg-color) !important;
+}
+
+.bg-section-bg,
+.bg-gray-50,
+.bg-gray-100 {
+  background-color: var(--section-bg) !important;
+}
+
+[data-theme="dark"] .bg-gray-200 { background-color: #2D3748 !important; }
+[data-theme="dark"] .bg-gray-300 { background-color: #374151 !important; }
+[data-theme="dark"] .bg-gray-800 { background-color: #111827 !important; }
+[data-theme="dark"] .bg-gray-900 { background-color: #0F1117 !important; }
+
+/* ─── Opacity-suffixed backgrounds (can't match with class selector) ── */
+/* bg-white/50, bg-white/80, bg-white/90, bg-white/95 */
+[data-theme="dark"] [class*="bg-white/"],
+[data-theme="dark"] [class*="bg-white\/"] {
+  background-color: rgba(26, 31, 46, 0.92) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* bg-gray-100/80 etc. */
+[data-theme="dark"] [class*="bg-gray-100/"],
+[data-theme="dark"] [class*="bg-gray-100\/"] {
+  background-color: var(--search-bg) !important;
+}
+
+/* ─── Specific components ────────────────────────────────────── */
+
+/* Search bar wrapper */
+[data-theme="dark"] .focus-within\:bg-white:focus-within {
+  background-color: var(--input-bg) !important;
+}
+
+/* Category icon circles */
+[data-theme="dark"] .category-item .icon-box {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+/* Filter pill strip ("All", "Veg", "Non-Veg") */
+[data-theme="dark"] .filter-btn {
+  color: var(--text-muted) !important;
+}
+[data-theme="dark"] .filter-btn.active {
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+/* Sort dropdown */
+[data-theme="dark"] .sort-dropdown {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--card-border) !important;
+}
+
+/* ─── Borders ────────────────────────────────────────────────── */
+.border-card-border { border-color: var(--card-border) !important; }
+
+[data-theme="dark"] .border-gray-100 { border-color: #2D3748 !important; }
+[data-theme="dark"] .border-gray-200 { border-color: #374151 !important; }
+[data-theme="dark"] [class*="border-white"] { border-color: var(--card-border) !important; }
+
+/* ─── Text ───────────────────────────────────────────────────── */
+.text-gray-900, .text-gray-800 { color: var(--text-color) !important; }
+.text-gray-700, .text-gray-600 { color: #D1D5DB !important; }
+
+/* ─── Inputs ─────────────────────────────────────────────────── */
+[data-theme="dark"] input:not(.bg-transparent),
+[data-theme="dark"] textarea:not(.bg-transparent),
+[data-theme="dark"] select:not(.bg-transparent) {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--card-border) !important;
+}
+
+[data-theme="dark"] .bg-transparent {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #6B7280 !important;
+}
+
+/* ─── Sidebar / Aside ────────────────────────────────────────── */
+[data-theme="dark"] aside,
+[data-theme="dark"] header {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+/* Sidebar hover row */
+[data-theme="dark"] .hover\:bg-gray-50:hover,
+[data-theme="dark"] .hover\:bg-section-bg:hover {
+  background-color: rgba(255,107,53,0.07) !important;
+}
+
+/* ─── Primary buttons (keep brand color in both modes) ───────── */
+.bg-primary,
+button.bg-primary,
+a.bg-primary {
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+.bg-primary:hover,
+button.bg-primary:hover,
+a.bg-primary:hover {
+  background-color: var(--primary-hover) !important;
+}
+
+/* ─── Shadows ────────────────────────────────────────────────── */
+[data-theme="dark"] .shadow-sm,
+[data-theme="dark"] .shadow {
+  box-shadow: 0 1px 8px rgba(0,0,0,0.4) !important;
+}
+[data-theme="dark"] .shadow-md {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
+}
+[data-theme="dark"] .shadow-lg,
+[data-theme="dark"] .shadow-xl {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6) !important;
+}
+
+/* ─── Bottom nav ─────────────────────────────────────────────── */
+[data-theme="dark"] nav.fixed.bottom-0 {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+}
+
+/* ─── Glass utility ──────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(241, 234, 228, 0.6);
+}
+[data-theme="dark"] .glass {
+  background: rgba(26, 31, 46, 0.80);
+  border-color: rgba(45, 55, 72, 0.6);
+}
+
+/* ─── Neon glow ──────────────────────────────────────────────── */
+.neon-glow { box-shadow: 0 4px 20px rgba(255, 107, 53, 0.15); }
+[data-theme="dark"] .neon-glow { box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3); }
+
+/* ─── Misc helpers ───────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.card-shadow {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+/* ─── Scrollbars ─────────────────────────────────────────────── */
+[data-theme="dark"] ::-webkit-scrollbar-track { background: var(--bg-color); }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #374151; }

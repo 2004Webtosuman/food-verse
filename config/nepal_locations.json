@@ -1,0 +1,133 @@
+{
+  "provinces": [
+    {
+      "id": 1,
+      "name": "Koshi Province",
+      "districts": [
+        {
+          "name": "Jhapa",
+          "municipalities": ["Bhadrapur", "Damak", "Mechinagar", "Birtamod", "Arjundhara"]
+        },
+        {
+          "name": "Morang",
+          "municipalities": ["Biratnagar", "Belbari", "Letang", "Pathari-Shanishchare"]
+        },
+        {
+          "name": "Sunsari",
+          "municipalities": ["Itahari", "Dharan", "Inaruwa", "Duhabi"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Madhesh Province",
+      "districts": [
+        {
+          "name": "Dhanusa",
+          "municipalities": ["Janakpurdham", "Dhanusadham", "Ganeshman Charnath"]
+        },
+        {
+          "name": "Parsa",
+          "municipalities": ["Birgunj", "Bahudarmai", "Parsagadhi"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bagmati Province",
+      "districts": [
+        {
+          "name": "Kathmandu",
+          "municipalities": [
+            "Kathmandu Metropolitan City", "Thamel", "New Baneshwor", "Old Baneshwor", "Putalisadak", "Durbarmarg", "Lazimpat", "Maharajgunj", "Balaju", "Kalanki", "Chabahil", "Bouddha", "Koteshwor", "Tinkune", "Sinamangal",
+            "Kirtipur", "Budhanilkantha", "Gokarneshwar", "Tokha", "Kageshwari Manohara", "Chandragiri", "Tarakeshwar", "Nagarjun", "Dakshinkali", "Shankharapur"
+          ]
+        },
+        {
+          "name": "Lalitpur",
+          "municipalities": [
+            "Lalitpur Metropolitan City", "Patan Durbar Square", "Pulchowk", "Jawalakhel", "Kumaripati", "Jhamsikhel", "Lagankhel", "Satdobato", "Sanepa", "Balkhu",
+            "Mahalaxmi", "Godawari", "Konjyosom", "Bagmati", "Mahankal"
+          ]
+        },
+        {
+          "name": "Bhaktapur",
+          "municipalities": [
+            "Bhaktapur", "Bhaktapur Durbar Square", "Sallaghari", "Jagati", "Kamalbinayak",
+            "Madhyapur Thimi", "Suryabinayak", "Changunarayan"
+          ]
+        },
+        {
+          "name": "Kavre",
+          "municipalities": [
+            "Dhulikhel", "Banepa", "Banepa Bus Park", "Sanga", "Panauti", "Panchkhal", "Namobuddha", "Mandandeupur", 
+            "Bethanchowk", "Bhumlu", "Chauri Deurali", "Khanikhola", "Mahabharat", "Roshi", "Temal"
+          ]
+        },
+        {
+          "name": "Nuwakot",
+          "municipalities": [
+            "Bidur", "Bidur Bazaar", "Battar", "Trishuli Bazaar", "Belkotgadhi", 
+            "Kakani", "Dupcheshwar", "Shivapuri", "Tadi", "Tarkeshwar", "Suryagadhi", "Panchakanya", "Likhu", "Kispang", "Myagang"
+          ]
+        },
+        {
+          "name": "Chitwan",
+          "municipalities": ["Bharatpur Metropolitan City", "Ratnanagar", "Khairahani", "Rapti"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Gandaki Province",
+      "districts": [
+        {
+          "name": "Kaski",
+          "municipalities": ["Pokhara Metropolitan City", "Annapurna", "Machhapuchchhre"]
+        },
+        {
+          "name": "Tanahu",
+          "municipalities": ["Byas", "Shuklagandaki", "Bhimad"]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Lumbini Province",
+      "districts": [
+        {
+          "name": "Rupandehi",
+          "municipalities": ["Butwal Sub-Metropolitan", "Siddharthanagar", "Tilottama"]
+        },
+        {
+          "name": "Banke",
+          "municipalities": ["Nepalgunj Sub-Metropolitan", "Kohalpur"]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Karnali Province",
+      "districts": [
+        {
+          "name": "Surkhet",
+          "municipalities": ["Birendranagar", "Bheriganga", "Gurbhakot"]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Sudurpashchim Province",
+      "districts": [
+        {
+          "name": "Kailali",
+          "municipalities": ["Dhangadhi Sub-Metropolitan", "Tikapur", "Ghodaghodi"]
+        },
+        {
+          "name": "Kanchanpur",
+          "municipalities": ["Bhimdatta", "Dodhara-Chadani", "Bedkot"]
+        }
+      ]
+    }
+  ]
+}

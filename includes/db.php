@@ -5,7 +5,7 @@
 $host = getenv('DB_HOST') ?: 'localhost';
 $db   = getenv('DB_NAME') ?: 'food_verse';
 $user = getenv('DB_USER') ?: 'root';
-$pass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : ''; // Default XAMPP password is empty
+$pass = getenv('DB_PASSWORD') !== false ? getenv('DB_PASSWORD') : ''; // Default XAMPP password is empty
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

@@ -23,6 +23,7 @@ php.ini
 *.rar
 *.7z
 /scratch/
+/food-verse/
 
 # Application Specific
 /uploads/*
